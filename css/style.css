@@ -96,6 +96,8 @@ img {
 .sidenav li + li {
   margin-top: 20px;
 }
+
+
 .conteudo-main {
   grid-area: conteudo-main;
   background-color: white;
@@ -106,14 +108,12 @@ img {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 30px;
-
 }
-
-.conteudo-main p {
+ p {
   font-size: 1.2em;
-    line-height: 1.6;
-    letter-spacing: -0.005em;
-    color: rgba(0, 0, 0, 0.7);
+  line-height: 1.6;
+  letter-spacing: -0.005em;
+  color: rgba(0, 0, 0, 0.7);
 }
 
 .titulo {
@@ -130,10 +130,78 @@ img {
   font-size: 0.875em;
   font-style: italic;
 }
+
+
+.caracteristicas {
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+}
+
+.caracteristicas > div {
+  width: 80px;
+  text-align: center;
+  background: linear-gradient(135deg, #8444ee, #b07dfb);
+  border-radius: 5px;
+  box-shadow: 5px 5px 15px 0px rgb(44 44 44 / 15%);
+  
+}
+
+.caracteristicas span {
+  display: block;
+}
+
+.numero {
+  color: #b07dfb;
+  font-size: 3em;
+  line-height: 1;
+  margin: 10px auto;
+}
+
+.rotulo {
+  background: white;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.destaque {
+  font-size: 0.875em;
+  color: #b07dfb;
+  max-width: 16em;
+}
+
+.citacao, .info {
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 5px 5px 15px 0px rgba(44, 44, 44, 0.15);
+  background: linear-gradient(135deg, #8844ee, #b07df8);
+}
+
+.info li{
+  color: white;
+  font-family: Courier, monospace;
+  font-size: 1.125em;
+  padding: 15px;
+  border-bottom: 1px solid white;
+  
+}
+
+.info li + li:last-child {
+  border: none;
+}
+.citacao p {
+  max-width: 500px;
+  font-size: 1.5em;
+  text-align: center;
+  margin: 0 auto;
+  font-style: italic;
+  color: white;
+}
 .img-1 {
   grid-row: span 2;
   align-self: flex-end;
 }
+
 .img-2 {
   align-self: flex-end;
 }
@@ -162,4 +230,52 @@ img {
   line-height: 1.6;
   letter-spacing: -0.005em;
   color: white;
+}
+
+@media (max-width: 760px) {
+  .conteudo {
+    grid-template-columns: 100%;
+    grid-template-areas: 
+    "header"
+    "sidenav"
+    "conteudo-main"
+    "anuncio"
+    "footer"
+    ;
+  }
+
+  .header {
+    grid-template-columns: auto;
+    justify-items: center;
+  }
+  .header img {
+    margin-bottom: 20px;
+  }
+  .header nav a {
+    font-size: 12px;
+  }
+  .sidenav {
+    overflow-x: auto;
+  }
+
+  .sidenav ul {
+    display: flex;
+    gap: 20px;
+  }
+
+  .sidenav ul li {
+    flex: 1 0 60px;
+    margin: 0;
+  
+  }
+
+  .conteudo-main {
+    grid-template-columns: auto;
+    padding: 40px;
+    justify-items: center;   
+  }
+  .anuncios {
+    display: flex;
+  }
+
 }
